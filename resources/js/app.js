@@ -7,10 +7,6 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
-
-//import $ from 'jquery';
-//window.$ = window.jQuery = $;
 import 'jquery-ui/ui/widgets/datepicker.js';
 
 
@@ -19,13 +15,6 @@ import 'jquery-ui/ui/widgets/datepicker.js';
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    el: '#app'
-});
-
 
 function initDatepicker() {
 
@@ -59,8 +48,8 @@ function initDatepicker() {
     ));
 }
 
-initDatepicker();
 
 $(document).ready(function() {
     $('.modal-error').modal('show');
+    initDatepicker();
 });
