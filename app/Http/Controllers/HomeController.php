@@ -30,12 +30,12 @@ class HomeController extends Controller
 
     public function spend()
     {
-        return view('spend', $this->prepareData(self::TYPE_SPEND));
+        return view('spend_gain', $this->prepareData(self::TYPE_SPEND));
     }
 
     public function gain()
     {
-
+        return view('spend_gain', $this->prepareData(self::TYPE_GAIN));
     }
 
     protected function prepareData($type = self::TYPE_SPEND)

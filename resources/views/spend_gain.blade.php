@@ -8,10 +8,10 @@
                 <div class="card-header">
                         <ul class="nav nav-pills pb-3">
                             <li class="nav-item">
-                                <a class="nav-link active" href="/home/spend">Расходы</a>
+                                <a class="nav-link {{$type == 1 ? 'active' : ''}}" href="/home/spend">Расходы</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/home/gain">Доходы</a>
+                                <a class="nav-link {{$type == 2 ? 'active' : ''}}" href="/home/gain">Доходы</a>
                             </li>
                         </ul>
                 </div>
