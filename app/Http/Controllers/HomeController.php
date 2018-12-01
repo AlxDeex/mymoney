@@ -54,7 +54,7 @@ class HomeController extends Controller
 
         return [
             'type' => $type,
-            'categories' => Category::orderBy('name')->get(['id', 'name'])->keyBy('id'),
+            'categories' => Category::where('type', $type)->orderBy('name')->get(['id', 'name'])->keyBy('id'),
             'transactions' => $transactions,
         ];
 

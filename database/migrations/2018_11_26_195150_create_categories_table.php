@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->string('name', 255);
+            $table->integer('type');
         });
     }
 
