@@ -28,7 +28,7 @@ class TransactionController extends Controller
             'comment' => $validated['comment'] ?: '',
         ]);
 
-        if ($validated['type'] = HomeController::TYPE_SPEND) {
+        if ($validated['type'] == HomeController::TYPE_SPEND) {
             return redirect()->to('/home/spend');
         } else {
             return redirect()->to('/home/gain');
@@ -36,38 +36,21 @@ class TransactionController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Transaction $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Transaction $transaction)
-    {
-        //
-    }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Transaction $transaction
-     * @return \Illuminate\Http\Response
+     * @param $transaction_id
+     * @param $type
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
-    public function update(Request $request, Transaction $transaction)
+    public function destroy($transaction_id, $type)
     {
-        //
-    }
+        Transaction::where(['id' => $transaction_id, 'user_id' => Auth::id()])->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Transaction $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Transaction $transaction)
-    {
-
-        //
+        if ($type == HomeController::TYPE_SPEND) {
+            return redirect()->to('/home/spend');
+        } else {
+            return redirect()->to('/home/gain');
+        }
     }
 }

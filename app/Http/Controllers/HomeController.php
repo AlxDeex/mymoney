@@ -41,21 +41,31 @@ class HomeController extends Controller
     protected function prepareData($type = self::TYPE_SPEND)
     {
         $transactions = [];
+
+        $sheet = [
+            self::TYPE_SPEND => 0,
+            self::TYPE_GAIN => 0,
+        ];
+
         foreach (Transaction::where('user_id', Auth::id())->get() as $transaction) {
-            $transactions[$transaction['category_id']]['item'] = $transaction;
-            if (!isset($transactions[$transaction['category_id']]['sum'])) {
-                $transactions[$transaction['category_id']]['sum'] = $transaction['sum_amount'];
+            $sheet[$transaction['type']] += $transaction['sum_amount'];
+            if ($transaction['type'] == $type) {
+                $transactions[$transaction['category_id']]['items'][] = $transaction;
+                if (!isset($transactions[$transaction['category_id']]['sum'])) {
+                    $transactions[$transaction['category_id']]['sum'] = $transaction['sum_amount'];
 
-            } else {
-                $transactions[$transaction['category_id']]['sum'] += $transaction['sum_amount'];
+                } else {
+                    $transactions[$transaction['category_id']]['sum'] += $transaction['sum_amount'];
 
+                }
             }
         }
 
         return [
             'type' => $type,
             'categories' => Category::where('type', $type)->orderBy('name')->get(['id', 'name'])->keyBy('id'),
-            'transactions' => $transactions,
+            'transactions_by_category' => $transactions,
+            'sheet' => $sheet,
         ];
 
     }

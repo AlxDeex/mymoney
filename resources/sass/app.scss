@@ -33,3 +33,35 @@ label {
 #perion-from, #perion-to {
   display: inline-block;
 }
+
+.card-body, .card-header {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.transactions {
+  padding-left: 0;
+  padding-right: 0;
+
+}
+
+.transactions table th, .transactions table td {
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+
+.progress-sum:hover {
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.del-transaction {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 25px;
+  font-weight: bold;
+  opacity: 1;
+}

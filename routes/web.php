@@ -23,3 +23,4 @@ Route::get('/home/gain', 'HomeController@gain');
 
 
 Route::post('/transaction/add', 'TransactionController@create');
+Route::get('/transaction/del/{id}/{type}', 'TransactionController@destroy');
