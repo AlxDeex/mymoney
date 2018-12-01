@@ -8,7 +8,28 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import '~jquery-ui/themes/base/all.css';
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.progress {
+  height: 2.3rem;
+  font-size: 1.3rem;
+}
+
+.datepicker {
+  cursor: pointer !important;
+  background: white !important;
+
+}
+
+label {
+  margin-bottom: 0;
+}
+
+#perion-from, #perion-to {
+  display: inline-block;
 }

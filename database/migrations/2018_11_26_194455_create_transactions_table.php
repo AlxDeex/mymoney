@@ -21,7 +21,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('account_id');
             $table->integer('category_id');
             $table->integer('user_id');
-            $table->decimal('sum_amount');
+            $table->decimal('sum_amount', 30);
             $table->integer('currency')->default('643');
             $table->timestamp('date')->default(DB::raw('CURRENT_TIMESTAMP'));
 

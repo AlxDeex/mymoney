@@ -14,22 +14,6 @@
                                 <a class="nav-link" href="/home/gain">Доходы</a>
                             </li>
                         </ul>
-
-
-                        <div class="period">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label for="period-from" class="ml-2 ml-sm-3">Начиная с</label>
-                                    <input id="period-from" type="text" readonly class="form-control datepicker col-10" value="{{ date('d.m.Y') }}">
-                                </div>
-                                <div class="col-6">
-                                    <label for="period-to" class="ml-2 ml-sm-3">по</label>
-                                    <input id="period-to" type="text" readonly class="form-control datepicker" value="{{ date('d.m.Y') }}">
-                                </div>
-                            </div>
-                        </div>
-
-
                 </div>
 
                 <div class="card-body">
@@ -124,30 +108,26 @@
                             <button type="button" class="btn btn-primary col-12" data-toggle="modal" data-target="#addModal">Добавить</button>
                         </div>
                     </div>
-                    <div class="row justify-content-sm-center pt-5">
+                    <div class="row pt-5">
                         <div class="col-12 col-sm-8 col-sm">
                             <table class="table col-12 text-primary">
                                 <thead class="bg-primary text-white">
                                 <tr>
                                     <th scope="col" class="text-black-50">ИТОГИ</th>
-                                    <th scope="col">Период</th>
                                     <th scope="col">Всего</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <th scope="row">Расходы</th>
-                                    <td>Mark</td>
                                     <td>Otto</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Доходы</th>
-                                    <td>Jacob</td>
                                     <td>Thornton</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Баланс</th>
-                                    <td>Larry</td>
                                     <td>the Bird</td>
                                 </tr>
                                 </tbody>

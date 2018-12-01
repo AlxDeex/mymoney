@@ -27,7 +27,8 @@ class TransactionAdd extends FormRequest
             'type' => 'numeric',
             'category' => 'numeric',
             'date' => 'date',
-            'sum' => 'numeric',
+            'sum' => 'required|numeric',
+            'comment' => 'nullable'
 
         ];
     }
@@ -38,6 +39,7 @@ class TransactionAdd extends FormRequest
             'type.numeric' => 'Ошибка типа операции',
             'category.numeric' => 'Ошибка категории',
             'date.date' => 'Неверная дата',
+            'sum.required' => 'Введите сумму',
             'sum.numeric' => 'Неверная сумма',
         ];
     }
